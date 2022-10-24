@@ -9,9 +9,9 @@ public class ComputerVsHuman {
 	//Diese Methode ist eine Kopie der main Methode aus HumanVsComputer.
 	//Die Klassen für Rater und Rätselsteller sind jetzt vertauscht.
 	public static void main(String[] args) {
-		IPlayer guesser = new /* TODO */Player();
+		IPlayer guesser = new ComputerPlayer();
 		IPayOffRule register = new PayPerGuess();
-		IPlayer chooser= new /* TODO */Player();
+		IPlayer chooser= new HumanPlayer();
 		GuessMyNumber g = new GuessMyNumber(chooser, guesser, register);
 
 		int result = g.playRound();
