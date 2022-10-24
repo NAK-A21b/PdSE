@@ -1,22 +1,18 @@
 package de.nordakademie.guessmynumber.player;
 
 
-
 import de.nordakademie.guessmynumber.IPlayer;
-
-import java.util.Random;
 
 import static de.nordakademie.guessmynumber.GuessMyNumber.*;
 
 
 public class ComputerPlayer2 implements IPlayer {
 
-    private final Random r = new Random();
+	private int upper;
+	private int lower;
 
-    /* TODO: Fügen sie Exemplarvariablen für die Ober- und Untergrenze des Ratebereichs ein */
 	public ComputerPlayer2() {
-		super();
-/* TODO: Initialisieren Sie die Ober- und Untergrenze des Ratebereichs über die importierten Konstanten aus GuessMyNumber. */
+		initBounds();
 	}
 
 	private void initBounds() {
@@ -33,7 +29,7 @@ public class ComputerPlayer2 implements IPlayer {
 	 * Mitte der oberen und unteren Grenze
 	 */
 	public int guessNumber() {
-		return /* TODO: Geraten wird das arithmetische Mittel der Ober- und Untergrenze. */
+		return (lower + upper) / 2;
 	}
 
 	/**
@@ -41,11 +37,12 @@ public class ComputerPlayer2 implements IPlayer {
 	 */
 	public void receiveResultOfGuess(int result) {
 		if (result==GUESS_TO_LARGE){
-			/* TODO: Aktualisieren der Obergrenze. */
+			upper = guessNumber() - 1;
 		} else if (result==GUESS_TO_SMALL){
-			/* TODO: Aktualisieren der Untergrenze. */
+			lower = guessNumber() + 1;
 		} else {
-/* TODO: Initialisieren Sie die Ober- und Untergrenze des Ratebereichs über die importierten Konstanten aus GuessMyNumber.*/
+			lower = LOWER_LIMIT;
+			upper = UPPER_LIMIT;
 		}
 	}
 
