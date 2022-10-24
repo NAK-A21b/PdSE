@@ -255,8 +255,8 @@ files:
 - name: src/de/nordakademie/guessmynumber/RunTournament.java
   visible: true
   placeholders:
-  - offset: 610
-    length: 189
+  - offset: 593
+    length: 49
     placeholder_text: '/* TODO: Lassen Sie den ComputerPlayer, den ComputerPlayer1
       und den ComputerPayer2 gegeneinander antreten. Das Varargs Feature erlaubt es
       die drei Parameter einfach per Komma zu trennen. */'
@@ -265,7 +265,7 @@ files:
       offset: 610
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: computerPlayer, computerPlayer1, computerPlayer2
   text: |
     package de.nordakademie.guessmynumber;
@@ -294,19 +294,19 @@ files:
 - name: src/de/nordakademie/guessmynumber/Tournament.java
   visible: true
   placeholders:
-  - offset: 122
-    length: 77
+  - offset: 123
+    length: 32
     placeholder_text: '/* TODO: Exemplarvariable für alle Spieler des Tournaments.
       Also ein Array.*/'
     initial_state:
       length: 77
       offset: 122
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: private final IPlayer[] players;
-  - offset: 466
-    length: 163
+  - offset: 429
+    length: 18
     placeholder_text: '/* TODO: Der Parameter für Players. Statt eines Spielerarrays
       mit [] verwenden Sie bitte das Varargs Symbol ...  . Es erlaubt die Übergabe
       von mehreren Spielern */'
@@ -314,50 +314,50 @@ files:
       length: 163
       offset: 466
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: IPlayer ... players
-  - offset: 896
-    length: 96
+  - offset: 711
+    length: 5
     placeholder_text: '/* TODO: Initialisieren Sie j so, dass jeder Sieler spielt
       gegen jeden anderen einmal matcht. */'
     initial_state:
       length: 96
       offset: 896
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: i+1
-  - offset: 1050
-    length: 62
+  - offset: 774
+    length: 36
     placeholder_text: '/* TODO: Spieler i tritt in einem Match gegen Spieler j an.
       */'
     initial_state:
       length: 62
       offset: 1050
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: matchPlayers(players[i], players[j])
-  - offset: 1524
-    length: 54
+  - offset: 1377
+    length: 29
     placeholder_text: '/* TODO: Ein Hinspiel. Ergebnis zu result addieren. */'
     initial_state:
       length: 54
       offset: 1524
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: result-=new GuessMyNumber(player1,player2,rule ).playRound()
-  - offset: 1592
-    length: 60
+  - offset: 1420
+    length: 30
     placeholder_text: '/* TODO: Ein Rückspiel. Ergebnis von result subtrahieren. */'
     initial_state:
       length: 60
       offset: 1592
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: result+=new GuessMyNumber(player2,player1,rule ).playRound()
   text: |
     package de.nordakademie.guessmynumber;
@@ -459,5 +459,8 @@ files:
       }
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Oct 2022 11:44:24 UTC
 record: -1
