@@ -1,0 +1,14 @@
+title: DependencyInjectionDelegation
+language: German
+summary: |-
+  Java Übung zum Thema Klassen, Interfaces, DependencyInjection und Delegation.
+  Created: Jan 2, 2021, 12:40:15 PM.
+programming_language: Java
+content:
+- lesson1
+- lesson2
+- lesson3
+- lesson4
+mode: Study
+vendor:
+  name: Zimmer

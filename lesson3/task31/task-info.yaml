@@ -1,0 +1,570 @@
+type: edu
+files:
+- name: src/de/nordakademie/guessmynumber/IPlayerFactory.java
+  visible: true
+  placeholders:
+  - offset: 136
+    length: 59
+    placeholder_text: '/* TODO: Welchen return Type benötigt die create Methode */'
+    initial_state:
+      length: 59
+      offset: 136
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: IPlayer
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    /**
+     * Das Interface dient zum Erzeugen von IPlayer n
+     */
+    public interface IPlayerFactory {
+        /* TODO: Welchen return Type benötigt die create Methode */ create();
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayerFactory.java
+  visible: true
+  placeholders:
+  - offset: 183
+    length: 49
+    placeholder_text: '/* TODO: Implementieren Sie die create Methode */'
+    initial_state:
+      length: 49
+      offset: 183
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: |-
+      public ComputerPlayer create() {
+              return new ComputerPlayer();
+          }
+  text: |
+    package de.nordakademie.guessmynumber.player;
+
+    import de.nordakademie.guessmynumber.IPlayerFactory;
+
+
+    public class ComputerPlayerFactory implements IPlayerFactory {
+        @Override
+        /* TODO: Implementieren Sie die create Methode */
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayer1Factory.java
+  visible: true
+  placeholders:
+  - offset: 230
+    length: 49
+    placeholder_text: '/* TODO: Implementieren Sie die create Methode */'
+    initial_state:
+      length: 49
+      offset: 230
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: |-
+      public ComputerPlayer1 create() {
+              return new ComputerPlayer1();
+          }
+  text: |
+    package de.nordakademie.guessmynumber.player;
+
+    import de.nordakademie.guessmynumber.IPlayer;
+    import de.nordakademie.guessmynumber.IPlayerFactory;
+
+
+    public class ComputerPlayer1Factory implements IPlayerFactory {
+        @Override
+        /* TODO: Implementieren Sie die create Methode */
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayer2Factory.java
+  visible: true
+  text: |
+    package de.nordakademie.guessmynumber.player;
+
+    import de.nordakademie.guessmynumber.IPlayer;
+    import de.nordakademie.guessmynumber.IPlayerFactory;
+
+    /**
+     * @author=zimmer
+     */
+    public class ComputerPlayer2Factory implements IPlayerFactory {
+        @Override
+        public ComputerPlayer2 create() {
+            return new ComputerPlayer2();
+        }
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/IPlayer.java
+  visible: true
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    public interface IPlayer extends IChooser, IGuesser {
+
+
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/IChooser.java
+  visible: true
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    public interface IChooser {
+        /**
+         * Ausdenken einer neuen Zahl
+         * @return die zu ratende Zahl
+         */
+        int nextNumberToGuess();
+
+        /**
+         * Nach jedem Rateversuch erhalten wir Informationen über das Raten.
+         * @param guessOfGuesser
+         */
+        void receiveGuessOfGuesser(int guessOfGuesser);
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/IGuesser.java
+  visible: true
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    public interface IGuesser {
+        /**
+         *   Der Rater rät eine Zahl.
+         * @return die geratene Zahl
+         */
+        int guessNumber();
+
+        /**
+         * Der Rater wird nach dem Aufruf von guessNumber über das Ergebnis seiner geratenen Zahl informiert
+         * @param result
+         *     verwendet die Konstanten GUESS_CORRECT, GUESS_TO_SMALL und GUESS_TO_LARGE
+         */
+        void receiveResultOfGuess(int result);
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/IPayOffRule.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\nimport java.util.List;\n\npublic\
+    \ interface IPayOffRule {\n\tint computePayOff(List<Integer> resultList);\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/HumanVsComputer.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
+    \npublic class HumanVsComputer {\n\tpublic static void main(String[] args) {\n\
+    \t\tIPlayer guesser = new HumanPlayer();\n\t\tIPayOffRule payOffRule = new PayPerGuess();\n\
+    \t\tIPlayer chooser= new ComputerPlayer();\n\t\tGuessMyNumber g = new GuessMyNumber(chooser,\
+    \ guesser, payOffRule);\n\t\t\n\t\tSystem.out.println(\"Gewinn von \"+guesser.getClass().getSimpleName()+\"\
+    \ beläuft sich auf \"+g.playRound()+\" Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/ComputerVsComputer.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer;\n\npublic class ComputerVsComputer\
+    \ {\n\t//Diese Methode ist eine Kopie der main Methode aus HumanVsComputer.\n\t\
+    //Rater und Rätselsteller sind jetzt Computer.\n\n\tpublic static void main(String[]\
+    \ args) {\n\t\tIPlayer guesser = new ComputerPlayer();\n\t\tIPayOffRule register\
+    \ = new PayPerGuess();\n\t\tIPlayer chooser= new ComputerPlayer();\n\t\tGuessMyNumber\
+    \ g = new GuessMyNumber(chooser, guesser, register);\n\t\t\n\t\tSystem.out.println(\"\
+    Gewinn von \"+guesser.getClass().getSimpleName()+\" beläuft sich auf \"+g.playRound()+\"\
+    \ Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/ComputerVsHuman.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
+    \npublic class ComputerVsHuman {\n\t//Diese Methode ist eine Kopie der main Methode\
+    \ aus HumanVsComputer.\n\t//Die Klassen für Rater und Rätselsteller sind jetzt\
+    \ vertauscht.\n\tpublic static void main(String[] args) {\n\t\tIPlayer guesser\
+    \ = new ComputerPlayer();\n\t\tIPayOffRule register = new PayPerGuess();\n\t\t\
+    IPlayer chooser= new HumanPlayer();\n\t\tGuessMyNumber g = new GuessMyNumber(chooser,\
+    \ guesser, register);\n\t\t\n\t\tSystem.out.println(\"Gewinn von \"+guesser.getClass().getSimpleName()+\"\
+    \ beläuft sich auf \"+g.playRound()+\" Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/HumanVsComputer1.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer1;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
+    \npublic class HumanVsComputer1 {\n\tpublic static void main(String[] args) {\n\
+    \t\tIPlayer guesser = new HumanPlayer();\n\t\tIPayOffRule payOffRule = new PayPerGuess();\n\
+    \t\tIPlayer chooser= new ComputerPlayer1();\n\t\tGuessMyNumber g = new GuessMyNumber(chooser,\
+    \ guesser, payOffRule);\n\t\t\n\t\tSystem.out.println(\"Gewinn von \"+guesser.getClass().getSimpleName()+\"\
+    \ beläuft sich auf \"+g.playRound()+\" Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/Computer2VsComputer1.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer1;\nimport de.nordakademie.guessmynumber.player.ComputerPlayer2;\n\
+    \npublic class Computer2VsComputer1 {\n\tpublic static void main(String[] args)\
+    \ {\n\t\tIPlayer guesser = new ComputerPlayer2();\n\t\tIPayOffRule payOffRule\
+    \ = new PayPerGuess();\n\t\tIPlayer chooser= new ComputerPlayer1();\n\t\tGuessMyNumber\
+    \ g = new GuessMyNumber(chooser, guesser, payOffRule);\n\t\t\n\t\tSystem.out.println(\"\
+    Gewinn von \"+guesser.getClass().getSimpleName()+\" beläuft sich auf \"+g.playRound()+\"\
+    \ Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/Computer2VsHuman.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
+    import de.nordakademie.guessmynumber.player.ComputerPlayer2;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
+    \npublic class Computer2VsHuman {\n\tpublic static void main(String[] args) {\n\
+    \t\tIPlayer guesser = new ComputerPlayer2();\n\t\tIPayOffRule payOffRule = new\
+    \ PayPerGuess();\n\t\tIPlayer chooser= new HumanPlayer();\n\t\tGuessMyNumber g\
+    \ = new GuessMyNumber(chooser, guesser, payOffRule);\n\t\t\n\t\tSystem.out.println(\"\
+    Gewinn von \"+guesser.getClass().getSimpleName()+\" beläuft sich auf \"+g.playRound()+\"\
+    \ Taler.\");\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/GuessMyNumber.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber;\n\n\nimport java.util.Vector;\n\n\n\
+    public class  GuessMyNumber {\n\n\tpublic static final int LOWER_LIMIT = 0;\n\t\
+    public static final int UPPER_LIMIT = 99;\n\tpublic static final int GUESS_CORRECT\
+    \ = 0;\n\tpublic static final int GUESS_TO_SMALL = -1;\n\tpublic static final\
+    \ int GUESS_TO_LARGE = 1;\n\n\tprivate final IChooser chooser;\n\tprivate final\
+    \ IGuesser guesser;\n\tprivate final IPayOffRule payOffRule;\n\n\tpublic GuessMyNumber(IChooser\
+    \ chooser, IGuesser guesser, IPayOffRule rule) {\n\t\tsuper();\n\t\tthis.chooser\
+    \ = chooser;\n\t\tthis.guesser = guesser;\n\t\tthis.payOffRule = rule;\n\t}\n\n\
+    \t/**\n\t * Methode führt ein Spiel aus. Diese Methode kann mehrmals hintereinander\
+    \ aufgerufen werden.\n\t * Die Spieler chooser und guesser sind selbst verantwortlich,\
+    \ nach beenden des Spiels\n\t * Ihren internen Status zurück zu setzen.\n\t *\
+    \ @return\n\t */\n\tpublic int playRound() {\n\t\t//Die resultList enthält die\
+    \ zu ratende Zahl und alle Rateversuche.\n\t\t//Verwende die List Implementation\
+    \ Vector, weil die Methoden firstElement und lastElement hat.\n\t\t//first Element\
+    \ ist die zu ratende Zahl und lastElement die letzte geratene.\n\t\tVector<Integer>\
+    \ resultList = new Vector<>();\n\t\tresultList.add(chooser.nextNumberToGuess());\n\
+    \t\tint result;\n\t\tdo {\n\t\t\tresultList.add(guesser.guessNumber());\n\t\t\t\
+    chooser.receiveGuessOfGuesser(resultList.lastElement());\n\t\t\tguesser.receiveResultOfGuess(result=evaluateGuess(resultList));\n\
+    \t\t} while (result != GUESS_CORRECT);\n\t\treturn payOffRule.computePayOff(resultList);\n\
+    \t}\n\n\tprivate int evaluateGuess(Vector<Integer> resultList) {\n\t\tif (resultList.firstElement()\
+    \ < (int)resultList.lastElement())\n\t\t\treturn GUESS_TO_LARGE;\n\t\tif (resultList.firstElement()\
+    \ > resultList.lastElement())\n\t\t\treturn GUESS_TO_SMALL;\n\t\treturn GUESS_CORRECT;\n\
+    \t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/payoff/PayPerGuess.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.payoff;\n\n\n\nimport de.nordakademie.guessmynumber.GuessMyNumber;\n\
+    import de.nordakademie.guessmynumber.IPayOffRule;\n\nimport java.util.List;\n\n\
+    public class PayPerGuess implements IPayOffRule {\n\n\tprivate final static int\
+    \ CRITICAL_NUMBER_OF_GUESSES = (int) Math.ceil((Math.log(GuessMyNumber.UPPER_LIMIT\
+    \ - GuessMyNumber.LOWER_LIMIT + 1) / Math.log(2))); // floor(ld(UPPER-LOWER+1));\n\
+    \n\n\t/*\n\tJeder Rateversuch reduziert den Gewinn um eine Einheit\n\t */\n\n\t\
+    @Override\n\tpublic int computePayOff(List<Integer> resultList) {\n\t\treturn\
+    \ CRITICAL_NUMBER_OF_GUESSES - resultList.size();\n\t}\n\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/payoff/PayPerSuccess.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.payoff;\n\n\n\nimport de.nordakademie.guessmynumber.GuessMyNumber;\n\
+    import de.nordakademie.guessmynumber.IPayOffRule;\n\nimport java.util.List;\n\n\
+    public class PayPerSuccess implements IPayOffRule {\n\tprivate final static int\
+    \ CRITICAL_NUMBER_OF_GUESSES = (int) Math.ceil((Math.log(GuessMyNumber.UPPER_LIMIT\
+    \ - GuessMyNumber.LOWER_LIMIT + 1) / Math.log(2))); // floor(ld(UPPER-LOWER+1));\n\
+    \n\t/*\n\tWurde die kritische Anzahl von Rateversuchen überschritten? Dann verloren,\
+    \ sonst gewonnen.\n\t */\n\t@Override\n\tpublic int computePayOff(List<Integer>\
+    \ resultList) {\n\t\treturn  CRITICAL_NUMBER_OF_GUESSES > resultList.size()?1:-1;\n\
+    \t}\n\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/HumanPlayer.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.player;\n\n\n\nimport de.nordakademie.guessmynumber.IPlayer;\n\
+    \nimport java.util.Scanner;\n\nimport static de.nordakademie.guessmynumber.GuessMyNumber.*;\n\
+    \n\npublic class HumanPlayer implements IPlayer {\n\n\n\n\n\tprivate final Scanner\
+    \ s = new Scanner(System.in);\n\n\t@Override\n\tpublic int nextNumberToGuess()\
+    \ {\n\t\tSystem.out.println(\"Welche Zahl soll geraten werden? \");\n\t\treturn\
+    \ s.nextInt();\n\t}\n\n\t@Override\n\tpublic void receiveGuessOfGuesser(int result)\
+    \ {\n\t\tSystem.out.println(\"Geraten wurde: \"+result);\n\t}\n\n\t@Override\n\
+    \tpublic int guessNumber() {\n\t\tSystem.out.println(\"Rate meine Zahl:\");\n\t\
+    \treturn s.nextInt();\n\t}\n\n\t@Override\n\tpublic void receiveResultOfGuess(int\
+    \ result) {\n\t\tif (result==GUESS_TO_SMALL) {\n\t\t\tSystem.out.println(\"zu\
+    \ klein\");;\n\t\t}\n\t\tif (result==GUESS_TO_LARGE) {\n\t\t\tSystem.out.println(\"\
+    zu groß\");;\n\t\t}\n\t\tif (result==GUESS_CORRECT) {\n\t\t\tSystem.out.println(\"\
+    richtig\");;\n\t\t}\t\n\t}\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayer.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.player;\n\n\n\nimport de.nordakademie.guessmynumber.IPlayer;\n\
+    \nimport java.util.Random;\n\nimport static de.nordakademie.guessmynumber.GuessMyNumber.LOWER_LIMIT;\n\
+    import static de.nordakademie.guessmynumber.GuessMyNumber.UPPER_LIMIT;\n\n\npublic\
+    \ class ComputerPlayer implements IPlayer {\n\n    private final Random r = new\
+    \ Random();\n\tpublic ComputerPlayer() {\n\t\tsuper();\n\t}\n\n\n\t/* **************************************************************\n\
+    \t *  Methoden der Ratestrategie                                  *\n\t **************************************************************\
+    \ */\n\n\t/**\n\t * Blindes drauf losraten zwischen LOWER_LIMIT und UPPER_LIMIT.\
+    \ \n\t * Der dümmste Bauer hat die dicksten Kartoffeln.\n\t * Ausserdem spielen\
+    \ doch Millionen Menschen jede Woche Lotto.\n\t * Warum sollte das nicht klappen?\n\
+    \t */\n\tpublic int guessNumber() {\n\t\treturn r.nextInt(UPPER_LIMIT-LOWER_LIMIT+1);\n\
+    \t}\n\n\t/**\n\t * Dumm ist der, der Dummes tut. Wir machen nichts, also auch\
+    \ nichts Dummes.\n\t * Was kümmert uns das Ergebnis des letzten Rateversuchs.\n\
+    \t * Liegt sowieso in der Vergangenheit.\n\t */\n\tpublic void receiveResultOfGuess(int\
+    \ result) {\n\t}\n\n\t/* **************************************************************\n\
+    \t *  Methoden fürs Zahlen Ausdenken                              *\n\t **************************************************************\
+    \ */\n\n\n\t/**\n\t * 50 ist doch so gut wie jede andere Zahl.\n\t * Bloß nicht\
+    \ kreativ werden.\n\t * Wir sind doch keine Künstler.\n\t **/\n\tpublic int nextNumberToGuess()\
+    \ {\n\t\treturn 50;\n\t}\n\n\n\t/**\n\t * Dumm ist der, der Dummes tut. Wir machen\
+    \ nichts, also auch nichts Dummes.\n\t * Die Ratestrategie des Anderen durchschauen\
+    \ wir sowieso nicht.\n\t */\n\tpublic void receiveGuessOfGuesser(int guessOfGuesser)\
+    \ {\n\t}\n\n\n\n\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayer1.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.player;\n\n\n\nimport de.nordakademie.guessmynumber.IPlayer;\n\
+    \nimport java.util.Random;\n\nimport static de.nordakademie.guessmynumber.GuessMyNumber.LOWER_LIMIT;\n\
+    import static de.nordakademie.guessmynumber.GuessMyNumber.UPPER_LIMIT;\n\n\npublic\
+    \ class ComputerPlayer1 implements IPlayer {\n\n    private final Random r = new\
+    \ Random();\n\tpublic ComputerPlayer1() {\n\t\tsuper();\n\t}\n\n\n\t/* **************************************************************\n\
+    \t *  Methoden der Ratestrategie                                  *\n\t **************************************************************\
+    \ */\n\n\t/**\n\t * Blindes drauf losraten zwischen LOWER_LIMIT und UPPER_LIMIT.\
+    \ \n\t * Der dümmste Bauer hat die dicksten Kartoffeln.\n\t * Ausserdem spielen\
+    \ doch Millionen Menschen jede Woche Lotto.\n\t * Warum sollte das nicht klappen?\n\
+    \t */\n\tpublic int guessNumber() {\n\t\treturn r.nextInt(UPPER_LIMIT-LOWER_LIMIT+1);\n\
+    \t}\n\n\t/**\n\t * Dumm ist der, der Dummes tut. Wir machen nichts, also auch\
+    \ nichts Dummes.\n\t * Was kümmert uns das Ergebnis des letzten Rateversuchs.\n\
+    \t * Liegt sowieso in der Vergangenheit.\n\t */\n\tpublic void receiveResultOfGuess(int\
+    \ result) {\n\t}\n\n\t/* **************************************************************\n\
+    \t *  Methoden fürs Zahlen Ausdenken                              *\n\t **************************************************************\
+    \ */\n\n\n\t/**\n\t * Eine zufällige Zahl auswählen ist besser.\n\t * Kopieren\
+    \ des Codes aus guessNumber.\n\t * Wenn ich auch sonst ein Anhänger des DRY Mantras\
+    \ bin, rufe ich hier nicht guessNumber auf.\n\t * Es handelt sich um unterschiedliche\
+    \ Business Logik Bestandteile, die nicht zusammmen\n\t * gefasst werden sollten.\
+    \ Nur zufällig wird derselbe Code verwendet.\n\t **/\n\tpublic int nextNumberToGuess()\
+    \ {\n\t\treturn r.nextInt(UPPER_LIMIT-LOWER_LIMIT+1);\n\t}\n\n\n\t/**\n\t * Dumm\
+    \ ist der, der Dummes tut. Wir machen nichts, also auch nichts Dummes.\n\t * Die\
+    \ Ratestrategie des Anderen durchschauen wir sowieso nicht.\n\t */\n\tpublic void\
+    \ receiveGuessOfGuesser(int guessOfGuesser) {\n\t}\n\n\n\n\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/player/ComputerPlayer2.java
+  visible: true
+  text: "package de.nordakademie.guessmynumber.player;\n\n\n\nimport de.nordakademie.guessmynumber.GuessMyNumber;\n\
+    import de.nordakademie.guessmynumber.IPlayer;\n\nimport java.util.Random;\n\n\
+    import static de.nordakademie.guessmynumber.GuessMyNumber.LOWER_LIMIT;\nimport\
+    \ static de.nordakademie.guessmynumber.GuessMyNumber.UPPER_LIMIT;\n\n\npublic\
+    \ class ComputerPlayer2 implements IPlayer {\n\n    private final Random r = new\
+    \ Random();\n\n    private int upper,lower;\n\tpublic ComputerPlayer2() {\n\t\t\
+    super();\n\t\tinitBounds();\n\t}\n\n\tprivate void initBounds() {\n\t\tupper=UPPER_LIMIT;\n\
+    \t\tlower=LOWER_LIMIT;\n\t}\n\n\n\t/* **************************************************************\n\
+    \t *  Methoden der Ratestrategie                                  *\n\t **************************************************************\
+    \ */\n\n\t/**\n\t * Mitte der oberen und unteren Grenze\n\t */\n\tpublic int guessNumber()\
+    \ {\n\t\treturn (upper+lower)/2;\n\t}\n\n\t/**\n\t * Anpassen der oberen/unteren\
+    \ Grenze an das Ergebnis\n\t */\n\tpublic void receiveResultOfGuess(int result)\
+    \ {\n\t\tif (result== GuessMyNumber.GUESS_TO_LARGE){\n\t\t\tupper=(upper+lower)/2-1;\n\
+    \t\t} else if (result== GuessMyNumber.GUESS_TO_SMALL){\n\t\t\tlower=(upper+lower)/2+1;\n\
+    \t\t}\n\t}\n\n\t/* **************************************************************\n\
+    \t *  Methoden fürs Zahlen Ausdenken                              *\n\t **************************************************************\
+    \ */\n\n\n\t/**\n\t * 50 ist doch so gut wie jede andere Zahl.\n\t * Bloß nicht\
+    \ kreativ werden.\n\t * Wir sind doch keine Künstler.\n\t **/\n\tpublic int nextNumberToGuess()\
+    \ {\n\t\treturn 50;\n\t}\n\n\n\t/**\n\t * Dumm ist der, der Dummes tut. Wir machen\
+    \ nichts, also auch nichts Dummes.\n\t * Die Ratestrategie des Anderen durchschauen\
+    \ wir sowieso nicht.\n\t */\n\tpublic void receiveGuessOfGuesser(int guessOfGuesser)\
+    \ {\n\t}\n\n\n\n\n}\n"
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/RunTournament.java
+  visible: true
+  placeholders:
+  - offset: 459
+    length: 59
+    placeholder_text: '/* TODO: Übergeben Sie drei Factories statt drei Spieler */'
+    initial_state:
+      length: 59
+      offset: 459
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: new ComputerPlayerFactory(), new ComputerPlayer1Factory(),
+      new ComputerPlayer2Factory()
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    import de.nordakademie.guessmynumber.payoff.PayPerGuess;
+    import de.nordakademie.guessmynumber.player.ComputerPlayer1Factory;
+    import de.nordakademie.guessmynumber.player.ComputerPlayer2Factory;
+    import de.nordakademie.guessmynumber.player.ComputerPlayerFactory;
+
+    public class RunTournament {
+        public static void main(String[] args) {
+            for (String result : new Tournament(200, new PayPerGuess(),
+                    /* TODO: Übergeben Sie drei Factories statt drei Spieler */).run()) {
+                System.out.println(result);
+            }
+
+        }
+    }
+  learner_created: false
+- name: src/de/nordakademie/guessmynumber/Tournament.java
+  visible: true
+  placeholders:
+  - offset: 136
+    length: 59
+    placeholder_text: '/* TODO: Das IPlayer Array wird zum IPlayerFactory Array */'
+    initial_state:
+      length: 59
+      offset: 136
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: IPlayerFactory[] playerFactories
+  - offset: 316
+    length: 97
+    placeholder_text: '/* TODO: Jetzt werden auch IPlayerFactories iniziert. Definieren
+      Sie den Konstruktor Parameter */'
+    initial_state:
+      length: 97
+      offset: 316
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: IPlayerFactory ... playerFactories
+  - offset: 1002
+    length: 45
+    placeholder_text: '/* TODO: Statt Playern Factories übergeben */'
+    initial_state:
+      length: 45
+      offset: 1002
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: playerFactories[i], playerFactories[j]
+  - offset: 1359
+    length: 61
+    placeholder_text: '/* TODO: Erzeugen Sie einen chooser aus der ersten Factory
+      */'
+    initial_state:
+      length: 61
+      offset: 1359
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: IPlayer chooser = playerFactory1.create()
+  - offset: 1434
+    length: 62
+    placeholder_text: '/* TODO: Erzeigen Sie einen Guesser aus der zweiten Factory
+      */'
+    initial_state:
+      length: 62
+      offset: 1434
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: IPlayer guesser = playerFactory2.create()
+  - offset: 1586
+    length: 47
+    placeholder_text: '/* TODO: Noch einmal mit vertauschten Rollen */'
+    initial_state:
+      length: 47
+      offset: 1586
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: |-
+      IPlayer chooser1 = playerFactory2.create();
+                  IPlayer guesser1 = playerFactory1.create();
+  text: |
+    package de.nordakademie.guessmynumber;
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class Tournament {
+        private final /* TODO: Das IPlayer Array wird zum IPlayerFactory Array */;
+        private final int rounds;
+        private final IPayOffRule rule;
+
+        public Tournament(int rounds, IPayOffRule rule, /* TODO: Jetzt werden auch IPlayerFactories iniziert. Definieren Sie den Konstruktor Parameter */) {
+            this.playerFactories = playerFactories;
+            this.rounds = rounds;
+            this.rule=rule;
+        }
+
+
+        public List<String> run(){
+            final List<String> results = new ArrayList<>();
+            for (int i = 0; i < playerFactories.length; i++) {
+                for (int j = i+1; j < playerFactories.length; j++) {
+                    results.add(
+                            /* Namen holen */
+                            playerFactories[i].create().getClass().getSimpleName()+" vs "+ playerFactories[j].create().getClass().getSimpleName()+": "
+                                    +matchPlayers(/* TODO: Statt Playern Factories übergeben */));
+                }
+            }
+            return results;
+        }
+
+        /*
+        Matches two players
+         */
+        private int matchPlayers(IPlayerFactory playerFactory1, IPlayerFactory playerFactory2){
+            int result=0;
+            for (int k = 0; k < rounds; k++) {
+                /* Zwei neue spieler erzeugen */
+                /* TODO: Erzeugen Sie einen chooser aus der ersten Factory */;
+                /* TODO: Erzeigen Sie einen Guesser aus der zweiten Factory */;
+                result-=new GuessMyNumber(chooser, guesser,rule ).playRound();
+
+                /* TODO: Noch einmal mit vertauschten Rollen */
+                result+=new GuessMyNumber(chooser1, guesser1, rule ).playRound();
+            }
+            return result;
+        }
+    }
+  learner_created: false
+- name: test/TestFactories.java
+  visible: false
+  text: |-
+    import static org.junit.Assert.*;
+
+    import de.nordakademie.guessmynumber.ComputerVsHuman;
+    import de.nordakademie.guessmynumber.RunTournament;
+    import de.nordakademie.guessmynumber.Tournament;
+    import org.junit.Test;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.lang.reflect.Constructor;
+    import java.lang.reflect.Field;
+    import java.lang.reflect.Modifier;
+
+    public class TestFactories {
+        @Test
+        public void testSolution() {
+
+            for (Field f : Tournament.class.getFields()) {
+                assertTrue("Variable " + f.getName() + " sollte private sein.", (f.getModifiers() & Modifier.PRIVATE) != 0);
+            }
+        }
+
+        @Test
+        public void test1(){
+            Class<?> c = Tournament.class;
+            Tournament out = new Tournament(1,null,null);
+            Field[] fields = out.getClass().getDeclaredFields();
+            assertEquals("Es werden drei Exemplarvariablen in Tournament erwartet.",3, fields.length);
+        }
+        @Test
+        public void test2(){
+            Constructor<?>[] cs=Tournament.class.getConstructors();
+            assertEquals("Zu viele Konstruktoren von Tournament",1,cs.length);
+        }
+        @Test
+        public void test3(){
+            Constructor<?>[] cs=Tournament.class.getConstructors();
+            assertEquals("Der Konstruktor von Tournament soll drei Parameter haben.",3,cs[0].getParameterTypes().length);
+            String s=cs[0].getParameterTypes()[2].getTypeName();
+            assertTrue("Konstruktor Parameter hat den falschen Typ",s.endsWith("IPlayerFactory[]"));
+        }
+
+        @Test
+        public void testSolution2(){
+            ByteArrayOutputStream out1 = new ByteArrayOutputStream();
+            PrintStream out = new PrintStream(out1);
+            System.out.close();
+            System.setOut(out);
+            System.setIn(new ByteArrayInputStream("".getBytes()));
+            RunTournament.main(null);
+            String response=out1.toString();
+            assertTrue("ComputerPlayer sollte mitspielen",response.contains("ComputerPlayer"));
+            assertTrue("ComputerPlayer1 sollte mitspielen.",response.contains("ComputerPlayer1"));
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
