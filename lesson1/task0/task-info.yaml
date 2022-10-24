@@ -174,6 +174,16 @@ files:
     \ guesser, payOffRule);\n\t\t\n\t\tSystem.out.println(\"Gewinn von \"+guesser.getClass().getSimpleName()+\"\
     \ beläuft sich auf \"+g.playRound()+\" Taler.\");\n\t}\n}\n"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Oct 2022 10:18:20 UTC
 record: -1
+selected_options:
+- 0
+- 2
+- 4
+- 5
+- 7
+- 8
 local_check: true
