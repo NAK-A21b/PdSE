@@ -40,8 +40,8 @@ files:
       length: 79
       offset: 1756
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: return LOWER_LIMIT+r.nextInt(UPPER_LIMIT-LOWER_LIMIT+1);
   text: "package de.nordakademie.guessmynumber.player;\n\n\n\nimport de.nordakademie.guessmynumber.IPlayer;\n\
     \nimport java.util.Random;\n\nimport static de.nordakademie.guessmynumber.GuessMyNumber.LOWER_LIMIT;\n\
@@ -250,5 +250,8 @@ files:
     \ kreativ werden.\n\t * Wir sind doch keine Künstler.\n\t **/\n\tpublic int nextNumberToGuess()\
     \ {\n\t\treturn 50;\n\t}\n}\n"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Oct 2022 10:58:20 UTC
 record: -1

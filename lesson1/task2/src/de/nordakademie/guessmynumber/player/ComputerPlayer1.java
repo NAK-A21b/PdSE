@@ -53,7 +53,7 @@ public class ComputerPlayer1 implements IPlayer {
 	 * gefasst werden sollten. Nur zufällig wird derselbe Code verwendet.
 	 **/
 	public int nextNumberToGuess() {
-		/* TODO: Die geratene Zahl soll zwischen LOWER_LIMIT und UPPER_LIMIT liegen. */
+		return LOWER_LIMIT+r.nextInt(UPPER_LIMIT-LOWER_LIMIT+1);
 	}
 
 }
