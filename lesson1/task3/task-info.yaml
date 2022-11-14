@@ -280,61 +280,61 @@ files:
 - name: src/de/nordakademie/guessmynumber/player/ComputerPlayer2.java
   visible: true
   placeholders:
-  - offset: 249
-    length: 44
+  - offset: 284
+    length: 90
     placeholder_text: '/* TODO: Fügen sie Exemplarvariablen für die Ober- und Untergrenze
       des Ratebereichs ein */'
     initial_state:
       length: 90
       offset: 284
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: private int upper,lower;
-  - offset: 249
-    length: 44
+  - offset: 414
+    length: 125
     placeholder_text: '/* TODO: Initialisieren Sie die Ober- und Untergrenze des Ratebereichs
       über die importierten Konstanten aus GuessMyNumber. */'
     initial_state:
       length: 125
       offset: 414
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: "\t\tupper=UPPER_LIMIT;\n\t\tlower=LOWER_LIMIT;"
-  - offset: 664
-    length: 20
+  - offset: 910
+    length: 76
     placeholder_text: '/* TODO: Geraten wird das arithmetische Mittel der Ober- und
       Untergrenze. */'
     initial_state:
       length: 76
       offset: 910
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: (upper+lower)/2;
-  - offset: 836
-    length: 26
+  - offset: 1138
+    length: 41
     placeholder_text: '/* TODO: Aktualisieren der Obergrenze. */'
     initial_state:
       length: 41
       offset: 1138
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: upper=(upper+lower)/2-1;
-  - offset: 904
-    length: 26
+  - offset: 1221
+    length: 42
     placeholder_text: '/* TODO: Aktualisieren der Untergrenze. */'
     initial_state:
       length: 42
       offset: 1221
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: lower=(upper+lower)/2+1;
-  - offset: 942
-    length: 47
+  - offset: 1275
+    length: 124
     placeholder_text: '/* TODO: Initialisieren Sie die Ober- und Untergrenze des Ratebereichs
       über die importierten Konstanten aus GuessMyNumber.*/'
     initial_state:
@@ -370,5 +370,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Mon, 24 Oct 2022 11:28:33 UTC
+  time: Mon, 14 Nov 2022 10:02:49 UTC
 record: -1

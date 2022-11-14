@@ -8,7 +8,7 @@ import de.nordakademie.guessmynumber.player.ComputerPlayerFactory;
 public class RunTournament {
     public static void main(String[] args) {
         for (String result : new Tournament(200, new PayPerGuess(),
-                /* TODO: Übergeben Sie drei Factories statt drei Spieler */).run()) {
+                new ComputerPlayerFactory(), new ComputerPlayer1Factory(), new ComputerPlayer2Factory()).run()) {
             System.out.println(result);
         }
 
