@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tournament {
-    private final /* TODO: Das IPlayer Array wird zum IPlayerFactory Array */;
+    private final IPlayerFactory[] playerFactories;
     private final int rounds;
     private final IPayOffRule rule;
 
-    public Tournament(int rounds, IPayOffRule rule, /* TODO: Jetzt werden auch IPlayerFactories iniziert. Definieren Sie den Konstruktor Parameter */) {
+    public Tournament(int rounds, IPayOffRule rule, IPlayerFactory... playerFactories) {
         this.playerFactories = playerFactories;
         this.rounds = rounds;
         this.rule=rule;
@@ -22,7 +22,7 @@ public class Tournament {
                 results.add(
                         /* Namen holen */
                         playerFactories[i].create().getClass().getSimpleName()+" vs "+ playerFactories[j].create().getClass().getSimpleName()+": "
-                                +matchPlayers(/* TODO: Statt Playern Factories übergeben */));
+                                +matchPlayers(playerFactories[i], playerFactories[j]));
             }
         }
         return results;
@@ -35,12 +35,9 @@ public class Tournament {
         int result=0;
         for (int k = 0; k < rounds; k++) {
             /* Zwei neue spieler erzeugen */
-            /* TODO: Erzeugen Sie einen chooser aus der ersten Factory */;
-            /* TODO: Erzeigen Sie einen Guesser aus der zweiten Factory */;
-            result-=new GuessMyNumber(chooser, guesser,rule ).playRound();
+            result-=new GuessMyNumber(playerFactory1.create(), playerFactory2.create(), rule ).playRound();
 
-            /* TODO: Noch einmal mit vertauschten Rollen */
-            result+=new GuessMyNumber(chooser1, guesser1, rule ).playRound();
+            result+=new GuessMyNumber(playerFactory2.create(), playerFactory1.create(), rule ).playRound();
         }
         return result;
     }

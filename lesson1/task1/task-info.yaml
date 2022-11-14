@@ -68,25 +68,25 @@ files:
 - name: src/de/nordakademie/guessmynumber/ComputerVsComputer.java
   visible: true
   placeholders:
-  - offset: 435
-    length: 10
+  - offset: 378
+    length: 16
     placeholder_text: /* TODO */
     initial_state:
-      length: 10
-      offset: 435
+      length: 16
+      offset: 378
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: Computer
-  - offset: 522
-    length: 10
+  - offset: 463
+    length: 16
     placeholder_text: /* TODO */
     initial_state:
-      length: 10
-      offset: 522
+      length: 16
+      offset: 463
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: Computer
   text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
     import de.nordakademie.guessmynumber.player.ComputerPlayer;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
@@ -102,24 +102,24 @@ files:
   visible: true
   placeholders:
   - offset: 449
-    length: 10
+    length: 16
     placeholder_text: /* TODO */
     initial_state:
-      length: 10
+      length: 16
       offset: 449
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Computer
-  - offset: 536
-    length: 10
+  - offset: 534
+    length: 13
     placeholder_text: /* TODO */
     initial_state:
-      length: 10
-      offset: 536
+      length: 13
+      offset: 534
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Human
   text: "package de.nordakademie.guessmynumber;\n\n\nimport de.nordakademie.guessmynumber.payoff.PayPerGuess;\n\
     import de.nordakademie.guessmynumber.player.ComputerPlayer;\nimport de.nordakademie.guessmynumber.player.HumanPlayer;\n\
@@ -246,5 +246,8 @@ files:
         }
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 14 Nov 2022 10:02:41 UTC
 record: -1

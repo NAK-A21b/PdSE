@@ -4,14 +4,14 @@ files:
   visible: true
   placeholders:
   - offset: 136
-    length: 59
+    length: 7
     placeholder_text: '/* TODO: Welchen return Type benötigt die create Methode */'
     initial_state:
       length: 59
       offset: 136
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: IPlayer
   text: |
     package de.nordakademie.guessmynumber;
@@ -26,15 +26,15 @@ files:
 - name: src/de/nordakademie/guessmynumber/player/ComputerPlayerFactory.java
   visible: true
   placeholders:
-  - offset: 183
-    length: 49
+  - offset: 259
+    length: 0
     placeholder_text: '/* TODO: Implementieren Sie die create Methode */'
     initial_state:
       length: 49
       offset: 183
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       public ComputerPlayer create() {
               return new ComputerPlayer();
@@ -53,15 +53,15 @@ files:
 - name: src/de/nordakademie/guessmynumber/player/ComputerPlayer1Factory.java
   visible: true
   placeholders:
-  - offset: 230
-    length: 49
+  - offset: 262
+    length: 0
     placeholder_text: '/* TODO: Implementieren Sie die create Methode */'
     initial_state:
       length: 49
       offset: 230
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       public ComputerPlayer1 create() {
               return new ComputerPlayer1();
@@ -361,14 +361,14 @@ files:
   visible: true
   placeholders:
   - offset: 459
-    length: 59
+    length: 87
     placeholder_text: '/* TODO: Übergeben Sie drei Factories statt drei Spieler */'
     initial_state:
       length: 59
       offset: 459
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: new ComputerPlayerFactory(), new ComputerPlayer1Factory(),
       new ComputerPlayer2Factory()
   text: |
@@ -393,17 +393,17 @@ files:
   visible: true
   placeholders:
   - offset: 136
-    length: 59
+    length: 32
     placeholder_text: '/* TODO: Das IPlayer Array wird zum IPlayerFactory Array */'
     initial_state:
       length: 59
       offset: 136
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: IPlayerFactory[] playerFactories
-  - offset: 316
-    length: 97
+  - offset: 289
+    length: 33
     placeholder_text: '/* TODO: Jetzt werden auch IPlayerFactories iniziert. Definieren
       Sie den Konstruktor Parameter */'
     initial_state:
@@ -411,49 +411,49 @@ files:
       offset: 316
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: IPlayerFactory ... playerFactories
-  - offset: 1002
-    length: 45
+  - offset: 911
+    length: 38
     placeholder_text: '/* TODO: Statt Playern Factories übergeben */'
     initial_state:
       length: 45
       offset: 1002
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: playerFactories[i], playerFactories[j]
-  - offset: 1359
-    length: 61
+  - offset: 1248
+    length: 0
     placeholder_text: '/* TODO: Erzeugen Sie einen chooser aus der ersten Factory
       */'
     initial_state:
       length: 61
       offset: 1359
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: IPlayer chooser = playerFactory1.create()
-  - offset: 1434
-    length: 62
+  - offset: 1248
+    length: 0
     placeholder_text: '/* TODO: Erzeigen Sie einen Guesser aus der zweiten Factory
       */'
     initial_state:
       length: 62
       offset: 1434
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: IPlayer guesser = playerFactory2.create()
-  - offset: 1586
-    length: 47
+  - offset: 1357
+    length: 1
     placeholder_text: '/* TODO: Noch einmal mit vertauschten Rollen */'
     initial_state:
       length: 47
       offset: 1586
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       IPlayer chooser1 = playerFactory2.create();
                   IPlayer guesser1 = playerFactory1.create();
@@ -566,5 +566,8 @@ files:
         }
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 14 Nov 2022 10:00:22 UTC
 record: -1

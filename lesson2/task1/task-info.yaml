@@ -265,7 +265,7 @@ files:
       offset: 610
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: computerPlayer, computerPlayer1, computerPlayer2
   text: |
     package de.nordakademie.guessmynumber;
@@ -303,7 +303,7 @@ files:
       offset: 122
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: private final IPlayer[] players;
   - offset: 466
     length: 163
@@ -315,7 +315,7 @@ files:
       offset: 466
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: IPlayer ... players
   - offset: 896
     length: 96
@@ -326,7 +326,7 @@ files:
       offset: 896
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: i+1
   - offset: 1050
     length: 62
@@ -337,7 +337,7 @@ files:
       offset: 1050
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: matchPlayers(players[i], players[j])
   - offset: 1524
     length: 54
@@ -347,7 +347,7 @@ files:
       offset: 1524
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: result-=new GuessMyNumber(player1,player2,rule ).playRound()
   - offset: 1592
     length: 60
@@ -357,7 +357,7 @@ files:
       offset: 1592
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: result+=new GuessMyNumber(player2,player1,rule ).playRound()
   text: |
     package de.nordakademie.guessmynumber;
@@ -459,5 +459,8 @@ files:
       }
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 14 Nov 2022 10:02:54 UTC
 record: -1

@@ -1,8 +1,8 @@
 package de.nordakademie.guessmynumber;
 
 /**
- * Das Interface dient zum Erzeugen von IPlayer n
+ * Das Interface dient zum Erzeugen von IPlayer p
  */
 public interface IPlayerFactory {
-    /* TODO: Welchen return Type benötigt die create Methode */ create();
+    IPlayer create();
 }
